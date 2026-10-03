@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Leather Sourcing Agency</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background-color: #0f0d0b;
+      color: #f3f4f6;
+      overflow-x: hidden;
+    }
+
+    /* Background Canvas Container */
+    .bg-animation-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    /* Decorative 3D-like floating items simulating AI generations */
+    .floating-item {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: drop-shadow(0 25px 35px rgba(0,0,0,0.65));
+      opacity: 0.22;
+      animation: floatAround 26s infinite ease-in-out;
+    }
+
+    .bag-1 {
+      width: 320px;
+      height: 320px;
+      top: 15%;
+      left: 8%;
+      background-image: url('https://unsplash.com');
+      animation-delay: 0s;
+    }
+
+    .wallet-1 {
+      width: 220px;
+      height: 220px;
+      bottom: 20%;
+      left: 12%;
+      background-image: url('https://unsplash.com');
+      animation-delay: -5s;
+      animation-duration: 22s;
+    }
+
+    .bag-2 {
+      width: 280px;
+      height: 280px;
+      top: 25%;
+      right: 5%;
+      background-image: url('https://unsplash.com');
+      animation-delay: -12s;
+      animation-duration: 30s;
+    }
+
+    .accessory-1 {
+      width: 180px;
+      height: 180px;
+      bottom: 12%;
+      right: 18%;
+      background-image: url('https://unsplash.com');
+      animation-delay: -8s;
+      animation-duration: 24s;
+    }
+
+    @keyframes floatAround {
+      0% { transform: translateY(0px) rotate(0deg) scale(1); }
+      33% { transform: translateY(-35px) translateX(20px) rotate(4deg) scale(1.03); }
+      66% { transform: translateY(20px) translateX(-15px) rotate(-3deg) scale(0.97); }
+      100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    }
+
+    /* Main Content Layer */
+    .main-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    header {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d97706;
+    }
+
+    .market-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(217, 119, 6, 0.15);
+      border: 1px solid rgba(217, 119, 6, 0.4);
+      color: #f59e0b;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-section {
+      text-align: center;
+      max-width: 800px;
+      margin-bottom: 45px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h1 span {
+      color: #d97706;
+      -webkit-text-fill-color: initial;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #d4d4d8;
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;\n    }
+
+    /* Form Container styling */
+    .form-card {
+      width: 100%;
+      max-width: 650px;
+      background: rgba(26, 22, 19, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(217, 119, 6, 0.15);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #a1a1aa;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: rgba(15, 13, 11, 0.6);
+      border: 1px solid rgba(161, 161, 170, 0.25);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #ffffff;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #d97706;
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+    }
+
+    .submit-btn:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(1px);
+    }
+
+    .success-overlay {
+      display: none;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .success-overlay h3 {
+      color: #f59e0b;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      h1 {
+        font-size: 32px;
+      }
+      .form-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated 3D Assets Background Grid -->
+  <div class=\"bg-animation-container\">
+    <div class="floating-item bag-1"></div>
+    <div class="floating-item wallet-1"></div>
+    <div class="floating-item bag-2"></div>
+    <div class="floating-item accessory-1"></div>
+  </div>
+
+  <!-- Front UI Layer -->
+  <div class="main-wrapper">
+    <header>
+      <div class="logo">ApexSourcing</div>
+      <div class="market-badges">
+        <span class="badge">UK</span>
+        <span class="badge">USA</span>
+        <span class="badge">FRANCE</span>
+        <span class="badge">ITALY</span>
+        <span class="badge">UAE</span>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <h1>Top-Quality <span>Finished Leather Goods</span> Sourcing</h1>
+      <p class="subtitle">
+        Connecting premium buyers across the UK, USA, France, Italy, and UAE directly to compliance-certified manufactured leather goods factories. Avoid intermediate margins.
+      </p>
+    </section>
+
+    <main class="form-card">
+      <div id="sourcingFormContainer">
+        <form id="rfqForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="buyerName">Full Name / Company</label>
+              <input type="text" id="buyerName" required placeholder="e.g., London Leather Ltd">
+            </div>
+            <div class="form-group">
+              <label for="buyerEmail">Corporate Email</label>
+              <input type="email" id="buyerEmail" required placeholder="name@company.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="targetMarket">Your Location / Market</label>
+              <select id="targetMarket" required>
+                <option value="" disabled selected>Select your region</option>
+                <option value="UK">United Kingdom (UK)</option>
+                <option value="USA">United States (USA)</option>
+                <option value="France">France</option>
+                <option value="Italy">Italy</option>
+                <option value="UAE">United Arab Emirates (UAE)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="productCategory">Product Category</label>
+              <select id="productCategory" required>
+                <option value="" disabled selected>Select product type</option>
+                <option value="Bags">Premium Travel Bags & Handbags</option>
+                <option value="Wallets">Minimalist & Classic Wallets</option>
+                <option value="Footwear">Leather Footwear & Shoes</option>
+                <option value="Accessories">Belts & Small Accessories</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="productQty">Estimated Target Quantity (MOQ)</label>
+            <input type="number" id="productQty" min="100" required placeholder="Minimum 100 pieces per style">
+          </div>
+
+          <div class="form-group">
+            <label for="productSpecs">Detailed Product Specifications & Requirements</label>
+            <textarea id="productSpecs" required placeholder="Provide detail regarding specific leather grains, required hardware finishes, dimensions, packaging requirements, or specific target market compliance (e.g. REACH)."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Procurement Request</button>
+        </form>
+      </div>
+
+      <div id="successState" class="success-overlay">
+        <h3>✓ RFQ Registered Successfully</h3>
+Use code with caution.
+Thank you for submitting your procurement requirements. Our regional trade desk will review your specifications against our verified, compliance-certified factory directory. Expect an initial sample proposal and pricing index within 48 business hours.
+
+
+
+function handleSubmit(e) {
+e.preventDefault();
+document.getElementById('sourcingFormContainer').style.display = 'none';
+document.getElementById('successState').style.display = 'block';
+}
+
+
+
+<FollowUp>
+Once you copy and paste this code into your file and confirm it displays correctly on your screen, let me know if you would like to:
+* Connect this form to a **free email receiver** so you get notified instantly when buyers submit info.
+* Draft the **initial cold messages** to start sending to UK buyers to direct them to this link.
+</FollowUp>
